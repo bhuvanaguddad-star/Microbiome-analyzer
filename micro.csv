@@ -1,0 +1,23 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Nov 19 11:19:31 2026
+
+@author: Bhuvana
+"""
+data = """Microorganism,Sample1,Sample2,Sample3,Sample4
+Escherichia coli,120,85,40,200
+Bacteroides fragilis,300,280,150,90
+Lactobacillus acidophilus,50,120,310,15
+Bifidobacterium longum,80,95,200,30
+Staphylococcus aureus,10,0,5,60
+Clostridium difficile,0,15,0,45
+Streptococcus pneumoniae,25,30,0,70
+Akkermansia muciniphila,60,45,90,0
+Faecalibacterium prausnitzii,140,160,75,10
+Prevotella copri,0,20,35,110
+"""
+
+with open("sample_microbiome_data.csv", "w") as f:
+    f.write(data)
+
+print("CSV created")
