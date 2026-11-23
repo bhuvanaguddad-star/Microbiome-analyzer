@@ -7,8 +7,12 @@ st.title("Microbiome Data Analysis Starter")
 # 1. Upload dataset into streamlite
 uploaded = st.file_uploader("Upload a CSV file", type="csv")
 
+if uploaded is None:
+    st.info("No file uploaded, so the sample data is being used.")
+    uploaded = "sample_microbiome_data.csv"
 
 table = an.load_data(uploaded)
+
 
 st.header("Data")
 st.dataframe(table)
