@@ -61,27 +61,10 @@ def diversity_table(table):
     return out.round(3)
 
 
-def bray_curtis(table):
-    samples = table.columns
-    values = table.to_numpy(dtype=float)
-    n = len(samples)
-    dist = np.zeros((n, n))
-    for i in range(n):
-        for j in range(n):
-            denom = values[:, i].sum() + values[:, j].sum()
-            if denom > 0:
-                dist[i, j] = np.abs(values[:, i] - values[:, j]).sum() / denom
-    return pd.DataFrame(dist, index=samples, columns=samples).round(3)
 
 
-def top_taxa(table, n=5):
-    order = total_abundance(table).index
-    top = table.loc[order[:n]]
-    rest = table.loc[order[n:]].sum(axis=0)
-    if len(order) > n:
-        top = pd.concat([top, rest.to_frame("Other").T])
-        top.index.name = "Microorganism"
-    return top
+
+
 
 
 def compare_samples(table, a, b):
