@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 
-
 def load_data(file):
     df = pd.read_csv(file)
     if df.shape[1] < 2 or df.shape[0] < 1:
@@ -20,8 +19,6 @@ def load_data(file):
 
 def total_abundance(table):
     return table.sum(axis=1).sort_values(ascending=False).rename("Total")
-
-
 def most_abundant(table):
     return total_abundance(table).idxmax()
 
