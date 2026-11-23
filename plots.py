@@ -19,7 +19,7 @@ def composition_bar(rel_table):
     return fig
 
 
-def heatmap(df, title="Heatmap", cbar_label="Value", cmap="YlGnBu"):
+def heatmap(df, title="Heatmap", cbar_label="Value", cmap="coolwarm"):
     fig, ax = plt.subplots()
     picture = ax.imshow(df.to_numpy(dtype=float), cmap=cmap)
     ax.set_xticks(range(len(df.columns)))
